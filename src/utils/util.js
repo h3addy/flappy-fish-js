@@ -18,8 +18,8 @@ export const createPipes = () => {
     return [topPipes, botPipes];
 }
 
-//hanlde space bar event to float fish
-export const checkFishBoundaries = () => {
+// check fish against walls of the board
+export const checkFishWalls = () => {
     const topFish = document.querySelector('#the-fish').getBoundingClientRect().top;
     const botFish = document.querySelector('#the-fish').getBoundingClientRect().bottom;
     const topTank = document.querySelector('.the-game').getBoundingClientRect().top;
@@ -28,4 +28,46 @@ export const checkFishBoundaries = () => {
     if (topFish <= topTank || botFish >= botTank) {
         return true;
     }
+}
+
+// check fish against pipes
+export const checkFishPipes = (index) => {
+    // console.log(index);
+    const topFish = document.querySelector('#the-fish').getBoundingClientRect().top;
+    const botFish = document.querySelector('#the-fish').getBoundingClientRect().bottom;
+    const rightFish = document.querySelector('#the-fish').getBoundingClientRect().right;
+    const topPipe = document.querySelector(`#top-pipe-${index}`);
+    const tPipeBottom = topPipe && topPipe.getBoundingClientRect().bottom;
+    const tPipeLeft = topPipe && topPipe.getBoundingClientRect().left;
+    const botPipe = document.querySelector(`#bot-pipe-${index}`);
+    const bPipeTop = botPipe && botPipe.getBoundingClientRect().top;
+    const bPipeLeft = botPipe && botPipe.getBoundingClientRect().left;
+    
+    if (topPipe !== null){
+        const collideTopPipe = (topFish <= tPipeBottom);
+        console.log(topFish, tPipeBottom, rightFish, tPipeLeft);
+        const collideBotPipe = (botFish >= bPipeTop && rightFish >= bPipeLeft);
+        // console.log(botFish, bPipeTop);
+        if (
+            collideTopPipe
+        ) {
+            return true;
+        }
+    }
+    return false;
+}
+
+// check if fish crossed pipes
+export const checkPipeCrossed = (index) => {
+    // console.log(index);
+    const topFish = document.querySelector('#the-fish').getBoundingClientRect().top;
+    const leftFish = document.querySelector('#the-fish').getBoundingClientRect().left;
+    const topPipe = document.querySelector(`#top-pipe-${index}`);
+    const tPipeBottom = topPipe && topPipe.getBoundingClientRect().bottom;
+    const tPipeRight = topPipe && topPipe.getBoundingClientRect().right;
+
+    if (tPipeBottom !== null && tPipeRight !== null){
+        return (leftFish > tPipeRight && topFish > tPipeBottom);
+    }
+    return false;
 }

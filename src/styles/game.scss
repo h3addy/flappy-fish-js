@@ -90,13 +90,13 @@
       .pipes-container {
         position: relative;
         top: -316px;
-        left: 330px;
+        left: 450px;
         width: inherit;
         height: inherit;
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
-        animation: pipes-slide 130s linear infinite;
+        animation: pipes-slide 330s linear infinite;
 
         @keyframes pipes-slide {
           0% {
@@ -140,6 +140,7 @@
 
         #the-fish {
           transition: transform 0.4s ease;
+          border: 1px solid red;
         }
       }
     }

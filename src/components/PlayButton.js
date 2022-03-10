@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useDispatch } from 'react-redux';
+import { updateScore } from '../redux/scoreSlice';
 import { startGame } from '../redux/startSlice';
 
 const PlayButton = () => {
@@ -9,6 +10,11 @@ const PlayButton = () => {
 
 	const playHandler = (event) => {
 		event.preventDefault();
+            dispatch(
+                updateScore({
+                    score: 0,
+                })
+            );
         dispatch(
             startGame({
                 gameStarted: true,
