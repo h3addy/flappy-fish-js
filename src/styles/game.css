@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.game-display {
+  width: 600px;
+  height: 320px;
+  border: 1px solid black;
+}
+
+.game-display .game-board {
+  width: 100%;
+  height: 100%;
+}
+
+.game-display .game-board .start-page {
+  background-image: url("../assets/bg.PNG");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+}
+
+.game-display .game-board .start-page .play-button {
+  width: 80px;
+  height: 80px;
+}
+
+.game-display .game-board .start-page .play-button :hover {
+  cursor: pointer;
+}
+
+.game-display .game-board .start-page .score-board {
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.game-display .game-board .start-page .score-board .score-header {
+  background: #f09731;
+  width: 100%;
+  height: 30%;
+}
+
+.game-display .game-board .start-page .score-board p {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.game-display .game-board .the-game {
+  height: 100%;
+  width: 100%;
+}
+
+.game-display .game-board .the-game .scrolling-image-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.game-display .game-board .the-game .scrolling-image-container .scrolling-image {
+  position: relative;
+  top: 0;
+  left: 0;
+  background: url("../assets/bg.PNG") repeat-x;
+  height: 316px;
+  width: 2680px;
+  -webkit-animation: bg-slide 20s linear infinite;
+          animation: bg-slide 20s linear infinite;
+}
+
+@-webkit-keyframes bg-slide {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  100% {
+    -webkit-transform: translate(-1680px);
+            transform: translate(-1680px);
+    /* The image width */
+  }
+}
+
+@keyframes bg-slide {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  100% {
+    -webkit-transform: translate(-1680px);
+            transform: translate(-1680px);
+    /* The image width */
+  }
+}
+
+.game-display .game-board .the-game .pipes-container {
+  position: relative;
+  top: -316px;
+  left: 330px;
+  width: inherit;
+  height: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-animation: pipes-slide 130s linear infinite;
+          animation: pipes-slide 130s linear infinite;
+}
+
+@-webkit-keyframes pipes-slide {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  100% {
+    -webkit-transform: translate(-11680px);
+            transform: translate(-11680px);
+    /* The image width */
+  }
+}
+
+@keyframes pipes-slide {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  100% {
+    -webkit-transform: translate(-11680px);
+            transform: translate(-11680px);
+    /* The image width */
+  }
+}
+
+.game-display .game-board .the-game .pipes-container .pipe-group {
+  height: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-right: 155px;
+}
+
+.game-display .game-board .the-game .pipes-container .the-pipes {
+  width: 60px;
+  background-color: #47a583;
+}
+
+.game-display .game-board .the-game .pipes-container .top-pipe {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.game-display .game-board .the-game .pipes-container .bot-pipe {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.game-display .game-board .the-game .fish-container {
+  position: relative;
+  top: -620px;
+  left: 5%;
+  width: 65px;
+  height: auto;
+}
+
+.game-display .game-board .the-game .fish-container #the-fish {
+  -webkit-transition: -webkit-transform 0.4s ease;
+  transition: -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, -webkit-transform 0.4s ease;
+}
+
+.game-display .instructions {
+  width: 100%;
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=game.css.map */

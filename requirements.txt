@@ -1,0 +1,12 @@
+1. render fish
+2. scoreboard
+3. render play button
+4. make fish fall
+5. make fish float using space bar
+6. render pipes dynamically
+7. check fish boundaries against pipes 
+        //check top pipe bottom
+        //check bot pipe top
+        //check whether fish has entered left of next pipe
+        //for all this keep the counter for pipe number.
+        //for every point scored, scroll the next pipe div into view.
