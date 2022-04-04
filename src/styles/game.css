@@ -78,13 +78,13 @@
 }
 
 .game-display .game-board .the-game {
+  position: relative;
   height: 100%;
   width: 100%;
 }
 
 .game-display .game-board .the-game .scrolling-image-container {
   overflow: hidden;
-  position: relative;
   width: 100%;
   height: 100%;
 }
@@ -199,18 +199,9 @@
 
 .game-display .game-board .the-game .fish-container {
   position: relative;
-  top: -620px;
-  left: 5%;
-  width: 65px;
-  height: auto;
-}
-
-.game-display .game-board .the-game .fish-container #the-fish {
-  -webkit-transition: -webkit-transform 0.4s ease;
-  transition: -webkit-transform 0.4s ease;
-  transition: transform 0.4s ease;
-  transition: transform 0.4s ease, -webkit-transform 0.4s ease;
-  border: 1px solid red;
+  left: 200px;
+  width: 70px;
+  height: 60px;
 }
 
 .game-display .instructions {

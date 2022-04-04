@@ -22,7 +22,7 @@ const StartPage = () => {
   
   return <div className='start-page'>
     <div className="left-container">
-        <Fish x={0} y={0} />
+        <Fish />
         <PlayButton />
     </div>
     <div className="right-container">
