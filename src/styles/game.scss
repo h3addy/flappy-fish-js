@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.game-display {
+  width: 600px;
+  height: 320px;
+  border: 1px solid black;
+
+  .game-board {
+    width: 100%;
+    height: 100%;
+
+    .start-page {
+      background-image: url("../assets/bg.PNG");
+      background-repeat: no-repeat;
+      background-size: 100%;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+
+      .play-button {
+        width: 80px;
+        height: 80px;
+
+        :hover {
+          cursor: pointer;
+        }
+      }
+
+      .score-board {
+        width: 150px;
+        height: 150px;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 1);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+
+        .score-header {
+          background: #f09731;
+          width: 100%;
+          height: 30%;
+        }
+
+        p {
+          margin-top: 10px;
+          text-align: center;
+          font-size: 1.2rem;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .the-game {
+      position: relative;
+      height: 100%;
+      width: 100%;
+
+      .scrolling-image-container {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+
+        .scrolling-image {
+          position: relative;
+          top: 0;
+          left: 0;
+          background: url("../assets/bg.PNG") repeat-x;
+          height: 316px;
+          width: 2680px;
+          animation: bg-slide 20s linear infinite;
+        }
+        @keyframes bg-slide {
+          0% {
+            transform: translate(0);
+          }
+          100% {
+            transform: translate(-1680px); /* The image width */
+          }
+        }
+      }
+
+      .pipes-container {
+        position: relative;
+        top: -316px;
+        left: 450px;
+        width: inherit;
+        height: inherit;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        animation: pipes-slide 330s linear infinite;
+
+        @keyframes pipes-slide {
+          0% {
+            transform: translate(0);
+          }
+          100% {
+            transform: translate(-11680px); /* The image width */
+          }
+        }
+
+        .pipe-group {
+          height: inherit;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          margin-right: 155px;
+        }
+
+        .the-pipes {
+          width: 60px;
+          background-color: #47a583;
+        }
+
+        .top-pipe {
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+
+        .bot-pipe {
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+        }
+      }
+
+      .fish-container {
+        position: relative;
+        left: 200px;
+        width: 70px;
+        height: 60px;
+
+        // #the-fish {
+        //   transition: transform 0.4s ease;
+        //   border: 1px solid red;
+        // }
+      }
+    }
+  }
+
+  .instructions {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
