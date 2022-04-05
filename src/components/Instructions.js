@@ -3,10 +3,14 @@ import React from 'react';
 const Instructions = () => {
     return (
     <div className='instructions'>
-        <p>Task is to dodge as many pipes as you can.</p>
-        <p>Hit space bar to play!</p>
-        <p>If you hit the pipe, you die and game over!</p>
-        <p>GL HF!!!</p>
+        <p>Instructions:</p>
+        <ul>
+            <li>Task is to dodge as many pipes as you can.</li>
+            <li>Click on the "Play Button".</li>
+            <li>Use "Space bar" to keep fish away from touching the pipe or walls!</li>
+            <li>If the fish hits the pipe or wall, fish dies and game over!</li>
+            <li>GL HF!!!</li>
+        </ul>
     </div>);
 };
 
