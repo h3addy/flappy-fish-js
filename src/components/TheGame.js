@@ -23,6 +23,7 @@ const TheGame = () => {
       const walls = checkFishWalls();
       const pp = checkFishPipes(currScore);
 
+      //fish collided with wall or pipe
       if(walls || pp === 0) {
         dispatch(
               updateScore({
@@ -35,6 +36,8 @@ const TheGame = () => {
             })
         );
       }
+
+      //fish crossed pipe
       if (!walls && pp === 1) {
         setCurrScore(currScore => currScore + 1);
       };

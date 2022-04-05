@@ -33,7 +33,7 @@ export const checkFishWalls = () => {
 
 // check fish against pipes
 export const checkFishPipes = (index) => {
-    if(index !== undefined){
+    if(index !== undefined && index !== null){
         const topFish = document.querySelector('.fish-container').getBoundingClientRect().top;
         const botFish = document.querySelector('.fish-container').getBoundingClientRect().bottom;
         const rightFish = document.querySelector('.fish-container').getBoundingClientRect().right;
@@ -50,10 +50,18 @@ export const checkFishPipes = (index) => {
         const bPipeLeft = botPipe && botPipe.getBoundingClientRect().left;
         
         if (topPipe !== null){
-            const collideTopPipe = (rightFish >= tPipeLeft && rightFish < tPipeRight && topFish <= tPipeBottom);
-            // console.log(collideTopPipe);
-            const collideBotPipe = (rightFish >= bPipeLeft && rightFish < bPipeRight && botFish >= bPipeTop);
-            // console.log(collideBotPipe);
+            const collideTopPipe = (
+                (rightFish >= tPipeLeft && rightFish < tPipeRight && topFish <= tPipeBottom) 
+                ||
+                (leftFish > tPipeLeft && leftFish < tPipeRight && topFish <= tPipeBottom)
+                );
+            // console.log("T", collideTopPipe);
+            const collideBotPipe = (
+                (rightFish >= bPipeLeft && rightFish < bPipeRight && botFish >= bPipeTop) 
+                || 
+                (leftFish > bPipeLeft && leftFish < bPipeRight && botFish >= bPipeTop)
+                );
+            // console.log("B", collideBotPipe);
             if (collideTopPipe || collideBotPipe) {
                 return 0;
             }
