@@ -75,8 +75,8 @@
 
 .game-display .game-board .start-page .difficulty-wrapper .radio-wrapper {
   position: relative;
-  top: -55px;
-  left: -70px;
+  top: -36px;
+  left: -80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -234,7 +234,6 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-right: 155px;
 }
 
 .game-display .game-board .the-game .pipes-container .the-pipes {
