@@ -32,6 +32,61 @@
       -ms-flex-align: center;
           align-items: center;
   gap: 30px;
+  position: relative;
+}
+
+.game-display .game-board .start-page .diff-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 2px;
+  background-color: #008000;
+  color: white;
+}
+
+.game-display .game-board .start-page .diff-btn:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+
+.game-display .game-board .start-page .inst-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 2px;
+  background-color: #008000;
+  color: white;
+}
+
+.game-display .game-board .start-page .inst-btn:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+
+.game-display .game-board .start-page .difficulty-wrapper {
+  width: 100%;
+  height: 60%;
+  position: relative;
+  top: 50px;
+  left: 100px;
+}
+
+.game-display .game-board .start-page .difficulty-wrapper .radio-wrapper {
+  position: relative;
+  top: -55px;
+  left: -70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
 }
 
 .game-display .game-board .start-page .play-button {
@@ -206,15 +261,25 @@
 
 .game-display .instructions {
   width: 100%;
-  height: 20%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.game-display .instructions p {
+  font-size: 1.4rem;
+  text-decoration: underline;
+  font-weight: 500;
 }
 /*# sourceMappingURL=game.css.map */
